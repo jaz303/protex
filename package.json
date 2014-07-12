@@ -21,5 +21,13 @@
     "es6-promise": "~1.0.0",
     "tape": "~2.13.3",
     "uglify-js": "~2.4.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaz303/protex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jaz303/protex/issues"
+  },
+  "homepage": "https://github.com/jaz303/protex"
 }
