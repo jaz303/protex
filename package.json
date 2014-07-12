@@ -1,0 +1,24 @@
+{
+  "name": "protex",
+  "version": "0.0.0",
+  "description": "A protex is a mutex that works with Promises",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "keywords": [
+    "mutex",
+    "mutual",
+    "exclusion",
+    "promise"
+  ],
+  "author": "Jason Frame <jason@onehackoranother.com> (http://jasonframe.co.uk)",
+  "license": "ISC",
+  "devDependencies": {
+    "es6-promise": "~1.0.0",
+    "tape": "~2.13.3"
+  }
+}
