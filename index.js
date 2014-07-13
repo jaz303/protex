@@ -37,8 +37,6 @@ function protex() {
             throw new Error("protex is already locked!");
         }
 
-        locked = true;
-
         if (typeof thing === 'function') {
             return execFunction(thing);
         } else if (thing instanceof Promise) {
