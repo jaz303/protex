@@ -2,7 +2,7 @@ var test = require('tape');
 var protex = require('..');
 global.Promise = require('es6-promise').Promise;
 
-test("locking with promises", function(assert) {
+test("locking with promises, resolved", function(assert) {
 
     assert.plan(4);
 
@@ -26,6 +26,25 @@ test("locking with promises", function(assert) {
     )
 
     result.then(makeLockCheck(false));
+
+});
+
+test("locking with promises, rejected", function(assert) {
+
+    var p = protex();
+
+    var promise = p.exec(function() {
+        return new Promise(function(resolve, reject) {
+            process.nextTick(function() {
+                reject(new Error("broken!"));
+            });
+        });
+    });
+
+    promise.catch(function() {
+        assert.ok(!p.isLocked());
+        assert.end();
+    });
 
 });
 

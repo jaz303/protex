@@ -14,9 +14,14 @@ function protex() {
 
     function execPromise(promise) {
         locked = true;
-        return promise.then(function() {
-            locked = false;
-        });
+
+        function release() {
+            locked = false;   
+        }
+
+        promise.then(release, release);
+
+        return promise;
     }
 
     function execFunction(fn) {
