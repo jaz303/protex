@@ -8,10 +8,6 @@ function protex() {
         return thing instanceof Promise;
     }
 
-    function isLocked() {
-        return locked;
-    }
-
     function execPromise(promise) {
         locked = true;
 
