@@ -39,7 +39,7 @@ function protex() {
 
         if (typeof thing === 'function') {
             return execFunction(thing);
-        } else if (thing instanceof Promise) {
+        } else if (isPromise(thing)) {
             return execPromise(thing);
         } else {
             throw new Error("exec() expects either a function or a promise");
